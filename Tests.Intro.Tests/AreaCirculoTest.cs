@@ -4,12 +4,12 @@ namespace Tests.Intro.Tests
 {
     public class AreaCirculoTest
     {
-        [Fact]
-        public void CalculoTest()
+        [Theory]
+        [InlineData(2, "12.5664")]
+        [InlineData(100.64, "31819.3103")]
+        [InlineData(150, "70685.7750")]
+        public void CalculoTest(double entrada, string saidaEsperada)
         {
-            var entrada = 2;
-            var saidaEsperada = "12,5664";
-
             var retorno = AreaCirculo.Calculo(entrada);
 
             Assert.Equal(retorno, saidaEsperada);
